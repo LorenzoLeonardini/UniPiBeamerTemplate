@@ -1,0 +1,69 @@
+\documentclass[11pt,svgnames,smaller,aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usetheme{UniPi}
+
+% ------------------ CHANGE FROM HERE ------------------
+\title{Title}
+\author{Mario Rossi}
+\institute[Università di Pisa]{Università di Pisa\\Dipartimento di Informatica}
+\date{Pisa, 7 ottobre 2022}
+% extra can be used for thesis supervisors and similar
+\extra{Supervisors\\Prof. Tizio Caio}
+% ------------------ END CHANGE ------------------
+
+\usepackage{transparent}
+\mode<presentation>
+
+\begin{document}
+
+\begin{frame} 
+	\titlepage
+\end{frame}
+\logo{\transparent{0.2}\includegraphics[height=2cm]{images/cherubino}}
+
+
+
+% ------------------ CHANGE FROM HERE ------------------
+\begin{frame}{Table of Contents}
+	\tableofcontents
+\end{frame}
+
+
+\section{Lists}
+\begin{frame}
+	\sectionpage
+	\centering
+\end{frame}
+
+\begin{frame}{Lorem ipsum}
+	\begin{itemize}
+		\item First item
+			\begin{itemize}
+				\item Sub item
+			\end{itemize}
+		\item Second item
+		\item Third item
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Lorem ipsum}
+	\begin{enumerate}
+		\item First item
+		\item Second item
+		\item Third item
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Listings}
+	\begin{lstlisting}
+#include <stdio.h>
+
+int main(void) {
+	printf("Hello World\n");
+	return 0;
+}
+	\end{lstlisting}
+\end{frame}
+
+\end{document}

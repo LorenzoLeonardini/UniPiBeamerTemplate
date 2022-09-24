@@ -1,0 +1,102 @@
+\ProvidesPackage{beamerthemeUniPi}[UniPi theme for beamer]
+\RequirePackage{ifthen}
+\usepackage{xcolor}
+
+\newcommand{\@extra}{?}
+\newcommand{\extra}[1]{\renewcommand{\@extra}{#1}}
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+	\centering\usebeamerfont{title}\inserttitle\par
+	\bigskip
+	\includegraphics[height=2cm]{images/cherubino}\\
+	\medskip
+	\usebeamerfont{author}\insertauthor\par
+	\vspace{10pt}
+	\ifthenelse{\equal{\@extra}{?}}{}{
+		{
+			\normalsize
+			\@extra\\
+		}
+	}
+	\bigskip
+	\usebeamerfont{institute}\insertinstitute\par
+	\bigskip
+	\usebeamerfont{date}\insertdate\par
+	\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+
+
+\definecolor{unipi}{RGB}{0,60,113}
+\definecolor{cherubino}{RGB}{20,75,122}
+
+\usetheme{Berlin}
+\usecolortheme{dolphin}
+
+\setbeamercolor{structure}{fg=unipi}
+
+\setbeamercolor*{palette primary}{fg=unipi!60!black,bg=unipi!40!white}
+\setbeamercolor*{palette secondary}{fg=unipi!50!black,bg=unipi!60!white}
+\setbeamercolor*{palette tertiary}{fg=white!85!unipi,bg=unipi}
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+\setbeamercolor*{sidebar}{bg=unipi}
+
+\setbeamercolor*{palette sidebar primary}{fg=unipi!10}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{fg=unipi!50}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+\useinnertheme{circles}
+\useoutertheme{infolines}
+
+\setbeamercolor{itemize item}{fg=cherubino}
+\setbeamercolor{itemize subitem}{fg=cherubino}
+\setbeamercolor{itemize subsubitem}{fg=cherubino}
+\setbeamercolor{local structure}{fg=cherubino}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=black}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamercolor{section in head/foot}{fg=white}
+
+\setbeamertemplate{headline}
+{
+  \leavevmode%
+  \hbox{%%
+  \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+    \usebeamerfont{section in head/foot}\insertsubsectionhead\hspace*{2ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsectionhead
+  \end{beamercolorbox}}%
+% 	}
+  \vskip0pt%
+}
+
+\hypersetup{
+	colorlinks = false,
+	linkcolor = {red},
+	urlcolor = {gray},
+	citecolor = {gray}
+}
+
+\usepackage{listings}
+\lstset{language=C++,
+        basicstyle=\scriptsize\ttfamily,
+        keywordstyle=\color{MidnightBlue}\ttfamily,
+        stringstyle=\color{orange}\ttfamily,
+        commentstyle=\color{red}\ttfamily,
+        morecomment=[l][\color{ForestGreen}]{\#},
+        numbers=left,
+        numbersep=5pt,
+        numberstyle=\tiny\color{gray},
+        showspaces=false,
+        showstringspaces=false,
+        tabsize=3,
+        xleftmargin=2em,
+}
+
+\titlegraphic{\vfill}
+\setbeamercolor{title}{fg=black!65!black}
